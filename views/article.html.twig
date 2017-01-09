@@ -1,0 +1,19 @@
+{% extends "layout.html.twig" %}
+
+
+{% block title %}{{article.title}}{% endblock %}
+
+
+{% block content %}
+
+<h2 class="noselect">{{article.title}}</h2>
+
+<article>
+
+    <p>{{ article.content }}</p>
+    <p>{{ article.kwConv}}</p>
+    
+</article>
+
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% spaceless %}
+<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="{{ app.request.basepath }}/lib/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="{{ app.request.basepath }}/css/fc.css" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="{{ app.request.basepath }}/data/favicon" sizes="32x32" />
+
+    <title>FC - {% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+
+        <div class='container-fluid toper noselect'>
+            <a href="{{path('home')}}" class="inline nodecoration" id='logo'> <img src="{{ app.request.basepath }}/data/logoCRAL.png" alt="LOGO"
+             style="width:106px;      height:60px;">
+             <h2 class="inline sitename">Formation Continue des Enseignants</h2></a>
+            <div class="toper-right inline">
+                <h2 class="inline sitename">BETA 17/11</h2> 
+                <a href="{{path('admin')}}" class="inline" id='logo2'> <img src="{{ app.request.basepath }}/data/logo_AFE.jpeg" alt="LOGO2"     style="width:60px;      height:60px;"></a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="70">
+          <ul class="nav navbar-nav">
+          <!-- <li id='Accueil'><a href="/">Accueil</a></li> -->
+
+            {% for tab in menu %}
+                {% if tab.getNbEntries == 1 %}
+                    {% for entry in tab.entries() %}
+                        <li id='menu_{tab.url}}'><a href="{{path('entry', {url : entry.url})}}">{{tab.name}}</a></li>
+                    {% endfor %}
+                {% elseif tab.nbEntries < 9 %}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle disabled" data-toggle="dropdown" href="{{path('tab', {url : tab.url})}}">{{tab.name}}
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        {% for entry in tab.getEntries() %}
+                            <li class="dropdown-li"><a href="{{path('entry', {url : entry.url})}}">{{entry.name}}</a></li>
+                        {% endfor%}
+                        </ul>
+                    </li>
+                {% else %}
+                    <li id='menu_{{tab.url}}'><a href="{{path('tab', {url : tab.url})}}">{{tab.name}}</a></li>
+                }
+                {% endif %}
+            {% endfor %}
+
+         <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{path('admin')}}"><span class="glyphicon glyphicon-cog"></span> Administration</a></li>
+         </ul>  -->
+        </nav>
+
+    <div class="container">
+        <div id="content">{% block content %}{% endblock %}</div>
+
+        <footer class="footer">
+            <div class="row">
+                <div class="col-sm-3">
+                    
+                </div>
+            </div>
+                
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+{% endspaceless %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+    $(document).ready(function() {
+        $('"#datepicker"').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+    });
+</script> -->

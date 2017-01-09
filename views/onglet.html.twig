@@ -1,0 +1,29 @@
+{% extends "layout.html.twig" %}
+
+
+{% block title %}{{tab.name}}{% endblock %}
+
+
+{% block content %}
+
+<h2 class="noselect">{{tab.name}}</h2>
+
+<br>
+<b>{{tab.content}}</b>
+<br>
+<br>
+
+<h3 class="noselect">Entrées:</h3>
+{% for entry in entries %}
+
+<article>
+
+    <a href="{{path('entry', {url : entry.url})}}"><h4>{{ entry.name }}</h4></a>
+
+    <p>{{ entry.content }}</p>
+
+</article>
+
+{% endfor %}
+
+{% endblock %}

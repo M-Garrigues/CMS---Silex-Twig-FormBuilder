@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+{% set adminMenu = true %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h2 class="text-center">{{ block('title') }}</h2>
+
+{% for flashMessage in app.session.flashbag.get('success') %}
+<div class="alert alert-success">
+    {{ flashMessage }}
+</div>
+{% endfor %}
+
+
+<div class="well">
+{{ form_start(tabForm, { 'attr': {'class': 'form-horizontal'} }) }}
+
+    <div class="form-group">
+        {{ form_label(tabForm.name, null, { 'label_attr':  {
+            'class': 'col-sm-4 control-label'
+        }}) }}
+        <div class="col-sm-4">
+            {{ form_errors(tabForm.name) }}
+            {{ form_widget(tabForm.name, { 'attr':  {
+                'class': 'form-control'
+            }}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(tabForm.url, null, { 'label_attr':  {
+            'class': 'col-sm-4 control-label'
+        }}) }}
+        <div class="col-sm-4">
+            {{ form_errors(tabForm.url) }}
+            {{ form_widget(tabForm.url, { 'attr':  {
+                'class': 'form-control'
+            }}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(tabForm.content, null, { 'label_attr':  {
+            'class': 'col-sm-3 control-label'
+        }}) }}
+        <div class="col-sm-6">
+            {{ form_errors(tabForm.content) }}
+            {{ form_widget(tabForm.content, { 'attr':  {
+                'class': 'form-control',
+                'rows': '15'                
+            }}) }}
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-3">
+            <input type="submit" class="btn btn-primary" value="Enregistrer" />
+        </div>
+    </div>
+{{ form_end(tabForm) }}
+</div>
+{% endblock %}
