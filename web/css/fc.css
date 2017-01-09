@@ -1,0 +1,201 @@
+:root{
+    --main-bg:white;
+    --second-bg:lightgray;
+    --main-detail:#00294B;
+    --second-detail:#1E66AC;
+}
+
+ 
+/*      ==================== LAYOUT =========================  */
+
+
+.toper{
+    background-color: var(--main-bg);
+    height: 70px;
+    padding-left: 0px;
+    color: black;
+    text-align: middle;
+    padding-top: 5px;
+
+}
+
+.toper-right{
+  float: right;
+}
+
+.sitename {
+    padding-left: 15px;
+    color: var(--main-detail);
+    vertical-align: middle;
+}
+
+.footer {
+    border-top: 1px solid var(--main-detail);
+    padding-top: 10px;
+    text-align: center;
+}
+
+a:hover, a:active{
+  text-decoration: none;
+}
+
+
+
+/*      =============== ARTICLES =========================  */
+
+
+
+.articleTitle:hover, .articleTitle:focus {
+    text-decoration: none;
+}
+
+article{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--main-detail);
+    border-radius: 5px;
+
+}
+
+
+
+
+/*      =================== NAVBAR =========================  */
+
+.affix {
+      top: 0;
+      width: 100%;
+  }
+.affix + .container-fluid {
+      padding-top: 70px;
+  }
+.affix + .container {
+      padding-top: 70px;
+  }
+.navbar {
+    font-size: 17px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 0px;
+    border-radius: 0px;
+    border-color: transparent;
+    z-index: 10;
+    border-color: var(--main-detail);
+
+}
+
+.navbar-inverse{
+    background-color: var(--main-detail);
+}
+
+.navbar-right{
+    margin-right:10px;
+}
+
+.dropdown-menu{
+    background-color: var(--main-detail);
+}
+
+
+.dropdown.open + a{
+    background-color: blue;
+}
+
+.navbar li a{
+    color: white !important;
+    border-color:transparent;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu { /*dropdown au survol*/
+    display: block;
+    color: black;    
+}
+
+ul.dropdown-menu > li.dropdown-li > a:hover{
+    background-color: var(--second-detail);
+}
+
+
+
+/* ========================== ADMIN ========================== */
+
+
+.adminTable {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.admintab{
+  height: 55px;
+  vertical-align: center;
+}
+
+.btn-primary{
+  background-color: var(--second-detail);
+}
+
+
+/* ========================== AUTRES ========================== */
+
+.inline{
+    display: inline;
+}
+
+.nodecoration{
+    text-decoration: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+    cursor: default;
+}
+
+a, a:active, a:focus {
+outline: none;
+}
+
+button, button:active, button:focus {
+outline: none;
+}
+
+.bouton + .alert{
+  margin-top: 10px;
+}
+.container-fluid{
+    margin-top:0;
+}
+
+
+     ___     ___     ___     ___     ___     ___     ___     ___
+ ___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \___
+/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \
+\___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/
+/   \___/                                                   \___/   \
+\___/                                                           \___/
+/   \                                                           /   \
+\___/                                                           \___/
+/   \                                                           /   \
+\___/                                                           \___/
+/   \                                                           /   \
+\___/                                                           \___/
+/   \                                                           /   \
+\___/                                                           \___/
+/   \                                                           /   \
+\___/                                                           \___/
+/   \___                                                     ___/   \
+\___/   \___     ___     ___     ___     ___     ___     ___/   \___/
+/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \
+\___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/
+    \___/   \___/   \___/   \___/   \___/   \___/   \___/   \___/
+
